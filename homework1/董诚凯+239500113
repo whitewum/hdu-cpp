@@ -1,0 +1,99 @@
+# compute.cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2, choice;
+    
+    // 输入两个数
+    cout << "请输入第一个整数：";
+    cin >> num1;
+    cout << "请输入第二个整数：";
+    cin >> num2;
+    
+    // 选择操作
+    cout << "请选择操作(1:加法,2:减法):";
+    cin >> choice;
+    
+    // 根据选择执行相应的操作并输出结果
+    if (choice == 1) {
+        // 执行加法操作
+        int sum = num1 + num2;
+        std::cout << "结果：" << sum << std::endl;
+        // 在此添加你的代码
+    } else if (choice == 2) {
+        // 执行减法操作
+        int difference = num1 - num2;
+        std::cout << "结果：" << difference << std::endl;
+    } else {
+        // 处理无效的选择
+        std::cout << "无效的选择！" << std::endl;
+    }
+    
+    return 0;
+}
+
+------------------------------
+
+# parity.cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number;
+    
+    // 输入一个整数
+    cout << "请输入一个整数：";
+    cin >> number;
+    
+    // 判断奇偶性并输出结果
+    if (number % 2 == 0) {
+       cout << "这个数是偶数。" << endl;
+    }else{
+        cout << "这个数是奇数。" << endl;
+    }
+    
+    return 0;
+}
+
+------------------------------------
+
+# guess_number.cpp
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    // 初始化随机数生成器
+    srand(time(0));
+    
+    // 生成1到10之间的随机数
+    int secretNumber = rand() % 10 + 1;
+    int guess;
+    int attempts = 0;
+    
+    cout << "我想了一个1到10之间的数字，请猜一猜：" << endl;
+    
+    // 使用循环直到猜对
+    do {
+        cout << "你的猜测：";
+        cin >> guess;
+        attempts++;
+        
+        // 判断猜测结果，并给出相应提示
+        if(guess>secretNumber){
+        	cout<<"大了"<<endl; 
+		    }else if(guess<secretNumber){
+			    cout<<"小了"<<endl; 
+		    }else{
+			    cout<<"猜对了！"<<endl;
+		    }
+        
+} while (guess != secretNumber);
+    
+    // 猜对后输出尝试次数
+    cout<<"尝试次数："<<attempts<<endl; 
+
+    return 0;
+}
