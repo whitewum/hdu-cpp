@@ -1,0 +1,77 @@
+# 第一题
+```cpp
+#include <iostream>
+using namespace std;
+int main() {
+    int num1, num2, choice;
+    cout << "请输入第一个整数：";
+    cin >> num1;
+    cout << "请输入第二个整数：";
+    cin >> num2;
+    cout << "请选择操作（1:加法，2:减法）：";
+    cin >> choice;
+    if (choice == 1) {
+    std::cout << "结果: " << num1 + num2 << std::endl;
+    } else if (choice == 2) {
+    std::cout << "结果: " << num1 - num2 << std::endl;
+    } else {
+    std::cout << "无效的操作选择!" << std::endl;
+    }
+    return 0;
+}
+```
+<img width="667" alt="{8861BB7A-6946-43DF-B603-5FF5D5D3DFA6}" src="https://github.com/user-attachments/assets/25a7615e-b674-46a7-ad99-fa3af18e4948">
+
+
+
+
+# 第二题
+```cpp
+#include <iostream>
+using namespace std;
+int main() {
+    int number;
+    cout << "请输入一个整数：";
+    cin >> number;
+    if (number % 2 == 0) {
+        std::cout << number << " 是偶数。" << std::endl;
+    } else {
+        std::cout << number << " 是奇数。" << std::endl;
+    }
+    return 0;
+}
+```
+
+<img width="660" alt="{870C48A8-A986-4989-A163-6DDE82683AEA}" src="https://github.com/user-attachments/assets/8f095a87-79d7-4293-ac66-44e10a071325">
+
+
+
+# 第三题
+```cpp
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+int main() {
+    std::srand(std::time(0));
+    int secretNumber = std::rand() % 10 + 1;
+    int guess;
+    int attempts = 0;
+    std::cout << "欢迎来到猜数字游戏！" << std::endl;
+    std::cout << "我已经想好了一个 1 到 10 之间的数字。" << std::endl;
+    while (true) {
+        std::cout << "请输入你的猜测: ";
+        std::cin >> guess;
+        attempts++;
+        if (guess < secretNumber) {
+            std::cout << "猜小了！" << std::endl;
+        } else if (guess > secretNumber) {
+            std::cout << "猜大了！" << std::endl;
+        } else {
+            std::cout << "恭喜你，猜对了！" << std::endl;
+            std::cout << "你一共猜了 " << attempts << " 次。" << std::endl;
+            break; // 猜对了，退出循环
+        }
+    }
+    return 0;
+}
+<img width="663" alt="{B5AC141A-D6A0-49CF-BD50-8F6BDB19BE62}" src="https://github.com/user-attachments/assets/d2817921-1e50-440c-8d8e-c9a1e742b032">
