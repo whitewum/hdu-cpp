@@ -1,0 +1,91 @@
+问题一：实现两个整数的加法和减法。
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2;
+    int operation;
+    int result;
+
+    // 提示用户输入两个整数
+    cout << "请输入第一个整数: ";
+    cin >> num1;
+    cout << "请输入第二个整数: ";
+    cin >> num2;
+
+    // 提示用户选择操作
+    cout << "请选择操作 (1 表示加法, 2 表示减法): ";
+    cin >> operation;
+
+    // 根据用户的选择执行相应的操作
+    if (operation == 1) {
+        result = num1 + num2;
+        cout << "计算结果: " << num1 << " + " << num2 << " = " << result << endl;
+    } else if (operation == 2) {
+        result = num1 - num2;
+        cout << "计算结果: " << num1 << " - " << num2 << " = " << result << endl;
+    } else {
+        cout << "无效的操作选择，请输入 1 或 2。" << endl;
+    }
+
+    return 0;
+}
+问题二：判断用户输入的数字是奇数还是偶数。
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number;
+
+    // 提示用户输入一个整数
+    cout << "请输入一个整数: ";
+    cin >> number;
+
+    // 使用 if-else 语句判断这个数是奇数还是偶数
+    if (number % 2 == 0) {
+        cout << number << " 是偶数。" << endl;
+    } else {
+        cout << number << " 是奇数。" << endl;
+    }
+
+    return 0;
+}
+问题三：让用户猜一个 1 到 10 之间的数字。
+  #include <iostream>
+#include <cstdlib>  // 包含 rand() 和 srand() 函数
+#include <ctime>    // 包含 time() 函数
+
+using namespace std;
+
+int main() {
+    // 使用当前时间作为随机数种子
+    srand(time(0));
+
+    // 生成一个 1 到 10 之间的随机数
+    int secretNumber = rand() % 10 + 1;
+
+    int guess;
+    int attempts = 0;
+
+    cout << "欢迎来到猜数字游戏！" << endl;
+    cout << "请猜一个 1 到 10 之间的数字: ";
+
+    // 使用 while 循环让用户多次猜测，直到猜对为止
+    while (true) {
+        cin >> guess;
+        attempts++;
+
+        // 判断用户猜测的数字
+        if (guess < secretNumber) {
+            cout << "猜小了，请再试一次: ";
+        } else if (guess > secretNumber) {
+            cout << "猜大了，请再试一次: ";
+        } else {
+            cout << "恭喜你，猜对了！" << endl;
+            cout << "你一共猜了 " << attempts << " 次。" << endl;
+            break;  // 猜对了，退出循环
+        }
+    }
+
+    return 0;
+}
