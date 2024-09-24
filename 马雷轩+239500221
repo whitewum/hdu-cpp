@@ -1,0 +1,85 @@
+1简单计算器
+#include <iostream>
+
+int main() {
+    int num1, num2;
+    int choice;
+
+    // 提示用户输入两个整数
+    std::cout << "请输入第一个整数: ";
+    std::cin >> num1;
+    std::cout << "请输入第二个整数: ";
+    std::cin >> num2;
+
+    // 提示用户选择操作
+    std::cout << "请选择操作 (1 表示加法, 2 表示减法): ";
+    std::cin >> choice;
+
+    // 根据用户的选择执行相应的操作
+    if (choice == 1) {
+        std::cout << "结果: " << num1 + num2 << std::endl;
+    } else if (choice == 2) {
+        std::cout << "结果: " << num1 - num2 << std::endl;
+    } else {
+        std::cout << "无效的选择" << std::endl;
+    }
+
+    return 0;
+}
+2奇数还是偶数
+#include <iostream>
+
+int main() {
+    int number;
+
+    // 提示用户输入一个整数
+    std::cout << "请输入一个整数: ";
+    std::cin >> number;
+
+    // 使用 if-else 语句判断这个数是奇数还是偶数
+    if (number % 2 == 0) {
+        std::cout << number << " 是偶数。" << std::endl;
+    } else {
+        std::cout << number << " 是奇数。" << std::endl;
+    }
+
+    return 0;
+}
+3猜数字
+#include <iostream>
+#include <cstdlib>  // 包含 rand() 和 srand() 函数
+#include <ctime>    // 包含 time() 函数
+
+int main() {
+    // 使用当前时间作为随机数种子
+    std::srand(std::time(0));
+
+    // 生成一个 1 到 10 之间的随机数
+    int secretNumber = std::rand() % 10 + 1;
+
+    int guess;
+    int attempts = 0;
+
+    std::cout << "欢迎来到猜数字游戏！" << std::endl;
+    std::cout << "我已经想好了一个 1 到 10 之间的数字，试着猜猜看吧！" << std::endl;
+
+    // 使用 while 循环让用户多次猜测，直到猜对为止
+    while (true) {
+        std::cout << "请输入你的猜测: ";
+        std::cin >> guess;
+        attempts++;
+
+        // 判断用户猜测的数字
+        if (guess < secretNumber) {
+            std::cout << "猜小了！" << std::endl;
+        } else if (guess > secretNumber) {
+            std::cout << "猜大了！" << std::endl;
+        } else {
+            std::cout << "恭喜你，猜对了！" << std::endl;
+            std::cout << "你一共猜了 " << attempts << " 次。" << std::endl;
+            break;  // 猜对了，退出循环
+        }
+    }
+
+    return 0;
+}
