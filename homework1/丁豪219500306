@@ -1,0 +1,76 @@
+题目1
+# 提示用户输入两个整数
+num1 = int(input("请输入第一个整数："))
+num2 = int(input("请输入第二个整数："))
+
+# 提示用户选择操作
+operation = int(input("请选择操作（1:加法，2:减法）："))
+
+# 根据用户的选择执行相应的操作
+if operation == 1:
+    result = num1 + num2
+    print(f"结果：{num1} + {num2} = {result}")
+elif operation == 2:
+    result = num1 - num2
+    print(f"结果：{num1} - {num2} = {result}")
+else:
+    print("无效的操作选择，请输入 1 或 2。")
+示例运行：
+请输入第一个整数：5
+请输入第二个整数：3
+请选择操作（1:加法，2:减法）：1
+结果：5 + 3 = 8
+  
+题目2
+# 提示用户输入一个整数
+num = int(input("请输入一个整数："))
+
+# 使用 if-else 语句判断这个数是奇数还是偶数
+if num % 2 == 0:
+    print(f"{num} 是偶数。")
+else:
+    print(f"{num} 是奇数。")
+示例运行：
+复制
+请输入一个整数：7
+7 是奇数。
+
+题目3
+import random
+
+# 生成一个 1 到 10 之间的随机数
+number_to_guess = random.randint(1, 10)
+
+# 初始化猜测次数
+guess_count = 0
+
+print("我想了一个 1 到 10 之间的数字，请猜一猜：")
+
+# 使用 while 循环让用户多次猜测，直到猜对为止
+while True:
+    # 提示用户输入猜测的数字
+    user_guess = int(input("你的猜测："))
+    
+    # 猜测次数加一
+    guess_count += 1
+    
+    # 判断用户猜测的数字
+    if user_guess < number_to_guess:
+        print("猜小了，请再试一次。")
+    elif user_guess > number_to_guess:
+        print("猜大了，请再试一次。")
+    else:
+        print(f"恭喜你，猜对了！你总共猜了 {guess_count} 次。")
+        break  # 猜对了，退出循环
+示例运行：
+我想了一个 1 到 10 之间的数字，请猜一猜：
+你的猜测：5
+猜小了，请再试一次。
+你的猜测：8
+猜大了，请再试一次。
+你的猜测：7
+恭喜你，猜对了！你总共猜了 3 次。
+猜大了，请再试一次。
+你的猜测：7
+ 恭喜你，猜对了！你总共猜了 3次。
+
